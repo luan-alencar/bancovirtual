@@ -18,8 +18,13 @@ import org.hibernate.validator.constraints.Length;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
+import lombok.Getter;
+import lombok.Setter;
+
 @Entity
 @Table(name = "TB_PESSOA")
+@Getter
+@Setter
 public class Pessoa implements Serializable {
 
 	private static final long serialVersionUID = -2448993761122309131L;
