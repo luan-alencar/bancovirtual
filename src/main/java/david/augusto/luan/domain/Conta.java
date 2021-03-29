@@ -20,7 +20,7 @@ import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
-import david.augusto.luan.service.enumeration.StatusEnum;
+import david.augusto.luan.service.enumeration.TipoContaEnum;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -42,7 +42,7 @@ public class Conta implements Serializable {
 
 	@Enumerated(EnumType.STRING)
 	@Column(name = "ST_CONTA", nullable = false) // ST_CONTA: Situacao Conta
-	private StatusEnum situacao;
+	private TipoContaEnum situacao;
 
 	@OneToMany(mappedBy = "conta")
 	private List<Transacao> transacoes = new ArrayList<Transacao>();

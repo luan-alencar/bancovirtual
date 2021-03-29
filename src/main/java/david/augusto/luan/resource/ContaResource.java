@@ -16,6 +16,7 @@ import david.augusto.luan.service.ContaService;
 import david.augusto.luan.service.dto.ContaDTO;
 import david.augusto.luan.service.mapper.ContaMapper;
 import io.micrometer.core.annotation.Timed;
+import io.swagger.annotations.ApiParam;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 
@@ -38,11 +39,13 @@ public class ContaResource {
 		service.salvar(contaDTO);
 		return ResponseEntity.ok().build();
 	}
-	
+
+	// " Esse filtro contém os campos que você vai querer filtrar na listagem
+	// Por excemplo: numero da conta, pelas pessoas, etc "
 	@PostMapping("/listar")
 	@Timed
 	public ResponseEntity<Page<ContaDTO>> listarContas(@RequestBody(required = false) FiltroBase filtro,
-			Pageable peageble) {
+			@ApiParam Pageable peageble) {
 		log.debug("Requisição REST para listar as Contas pelo o filtro: {}", filtro, peageble);
 		Page<ContaDTO> listaConta = service.findPageble(filtro, peageble);
 		return ResponseEntity.ok(listaConta);

@@ -5,9 +5,9 @@ import lombok.Getter;
 
 @AllArgsConstructor
 @Getter
-public enum StatusEnum {
+public enum TipoContaEnum {
 
-	A("Ativo"), I("Inativo");
+	A("Corrente"), I("Poupança");
 
 	private String value;
 

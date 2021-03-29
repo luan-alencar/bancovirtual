@@ -10,7 +10,7 @@ import david.augusto.luan.domain.Conta;
 import david.augusto.luan.domain.FiltroBase;
 import david.augusto.luan.repository.ContaRepository;
 import david.augusto.luan.service.dto.ContaDTO;
-import david.augusto.luan.service.enumeration.StatusEnum;
+import david.augusto.luan.service.enumeration.TipoContaEnum;
 import david.augusto.luan.service.exception.RegraNegocioException;
 import david.augusto.luan.service.mapper.ContaMapper;
 import lombok.RequiredArgsConstructor;
@@ -47,7 +47,7 @@ public class ContaService {
 	}
 
 	public Conta salvar(ContaDTO contaDTO) {
-		contaDTO.setSituacao(StatusEnum.A);
+		contaDTO.setSituacao(TipoContaEnum.A);
 		Conta conta = mapper.toEntity(contaDTO);
 		return repository.save(conta);
 	}

@@ -4,7 +4,7 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
-import david.augusto.luan.service.enumeration.StatusEnum;
+import david.augusto.luan.service.enumeration.TipoContaEnum;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -16,5 +16,5 @@ public class FiltroBase implements Serializable {
 
 	private List<Long> ids = new ArrayList<>();
 	
-	private StatusEnum situacao;
+	private TipoContaEnum situacao;
 }
