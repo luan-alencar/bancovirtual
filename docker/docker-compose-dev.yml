@@ -1,0 +1,7 @@
+version: '2'
+services:
+  bancovirtual-registry:
+    extends:
+      file: bancovirtual-postgresql.yml
+      service: bancovirtual-postgresql
+    container_name: bancovirtual-registry

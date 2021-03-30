@@ -5,7 +5,6 @@ import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
-import david.augusto.luan.domain.Pessoa;
 import david.augusto.luan.domain.Transacao;
 import david.augusto.luan.service.enumeration.TipoContaEnum;
 import lombok.Getter;
@@ -17,7 +16,7 @@ public class ContaDTO implements Serializable {
 
 	private Long id;
 
-	private Pessoa pessoa;
+	private Long usuario;
 
 	private TipoContaEnum situacao;
 
@@ -25,10 +24,7 @@ public class ContaDTO implements Serializable {
 
 	private Double saldo;
 
-	private Double limiteValor;
-
-	private String tipo;
+	private Double limiteValor = 5.000;
 
 	private LocalDateTime dataCriacao;
-
 }

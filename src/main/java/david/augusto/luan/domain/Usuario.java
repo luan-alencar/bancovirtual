@@ -13,6 +13,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+import javax.validation.constraints.Size;
 
 import org.hibernate.validator.constraints.Length;
 
@@ -25,7 +26,7 @@ import lombok.Setter;
 @Table(name = "TB_PESSOA")
 @Getter
 @Setter
-public class Pessoa implements Serializable {
+public class Usuario implements Serializable {
 
 	private static final long serialVersionUID = -2448993761122309131L;
 
@@ -44,10 +45,22 @@ public class Pessoa implements Serializable {
 	@Column(name = "CPF", unique = true, nullable = false)
 	private String cpf;
 
+	@Column(name = "TELEFONE")
+	private String telefone;
+
+	@Column(name = "SEGUNDO_TELEFONE")
+	private String segundoTelefone;
+
+	@Column(name = "EMAIL")
+	private String email;
+
 	@Column(name = "DATA_NASCIMENTO")
 	private LocalDateTime dataNascimento;
 
+	@Column(name = "DATA_CADASTRO", nullable = false, updatable = false)
+	private LocalDateTime dataCadastro;
+
 	@JsonIgnore
-	@OneToMany(mappedBy = "PESSOA", fetch = FetchType.EAGER)
+	@OneToMany(mappedBy = "USUARIO", fetch = FetchType.EAGER)
 	private List<Conta> contas = new ArrayList<>();
 }

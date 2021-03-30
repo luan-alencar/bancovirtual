@@ -10,14 +10,14 @@ import org.springframework.stereotype.Repository;
 
 import david.augusto.luan.domain.Conta;
 import david.augusto.luan.domain.FiltroBase;
+import david.augusto.luan.domain.Usuario;
 import david.augusto.luan.service.dto.ContaDTO;
-import org.springframework.transaction.annotation.Transactional;
 
 @Repository
-@Transactional(readOnly = false)
-public interface ContaRepository extends JpaRepository<Conta, Long> {
+public interface UsuarioRepository extends JpaRepository<Usuario, Long> {
 
-	Page<ContaDTO> buscarListagemContasFiltro(@Param("filtro") String atributo, Pageable peageble);
+	
+	Page<Usuario> filtrar(@Param("filtro") String filtro, Pageable peageble);
 
 	Page<ContaDTO> findByIdAndStatus(@Param("filtro") FiltroBase filtro, @Param("isVazio") boolean isVazio,
 			Pageable peageble);

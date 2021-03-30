@@ -1,0 +1,9 @@
+version: '2'
+services:
+  bancovirtual-postgresql:
+    image: postgres:11.5
+    environment:
+      - POSTGRES_USER=bancovirtual
+      - POSTGRES_PASSWORD=bancovirtual
+    ports:
+      - 5432:5432

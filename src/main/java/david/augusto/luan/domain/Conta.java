@@ -38,7 +38,7 @@ public class Conta implements Serializable {
 	private Long id;
 
 	@ManyToOne(fetch = FetchType.EAGER)
-	private Pessoa pessoa;
+	private Usuario usuario;
 
 	@Enumerated(EnumType.STRING)
 	@Column(name = "ST_CONTA", nullable = false) // ST_CONTA: Situacao Conta

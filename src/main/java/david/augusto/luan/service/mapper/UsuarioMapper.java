@@ -6,6 +6,6 @@ import david.augusto.luan.domain.Usuario;
 import david.augusto.luan.service.dto.UsuarioDTO;
 
 @Mapper
-public interface ProdutoMapper extends EntityMapper<UsuarioDTO, Usuario> {
+public interface UsuarioMapper extends EntityMapper<UsuarioDTO, Usuario> {
 
 }

@@ -5,7 +5,10 @@ import org.springframework.stereotype.Repository;
 
 import david.augusto.luan.domain.Transacao;
 
+import org.springframework.transaction.annotation.Transactional;
+
 @Repository
-public interface TransacaoRepository extends JpaRepository<Transacao, Long>{
+@Transactional(readOnly = false)
+public interface TransacaoRepository extends JpaRepository<Transacao, Long> {
 
 }

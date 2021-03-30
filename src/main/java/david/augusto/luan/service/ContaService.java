@@ -11,35 +11,17 @@ import david.augusto.luan.domain.FiltroBase;
 import david.augusto.luan.repository.ContaRepository;
 import david.augusto.luan.service.dto.ContaDTO;
 import david.augusto.luan.service.enumeration.TipoContaEnum;
-import david.augusto.luan.service.exception.RegraNegocioException;
 import david.augusto.luan.service.mapper.ContaMapper;
 import lombok.RequiredArgsConstructor;
 
 @Service
+@Transactional
 @RequiredArgsConstructor
 public class ContaService {
-
-	private final Conta conta;
 
 	private final ContaRepository repository;
 
 	private final ContaMapper mapper;
-
-	public void sacar(Double valor, Long id) throws RegraNegocioException {
-		if (valor > conta.getSaldo()) {
-			throw new RegraNegocioException("Valor maior que saldo permitido");
-		}
-		repository.setFixedSaldo(valor, id);
-	}
-
-	public void depositar(double valor) {
-		if (valor < 0) {
-			throw new RegraNegocioException("Operação inválida");
-		}
-
-		double novoSaldo = conta.getSaldo() + valor;
-		conta.setSaldo(novoSaldo);
-	}
 
 	@Transactional(readOnly = true)
 	public Page<ContaDTO> findPageble(FiltroBase filtro, Pageable peageble) {
@@ -52,5 +34,4 @@ public class ContaService {
 		return repository.save(conta);
 	}
 
-	
 }
