@@ -24,7 +24,7 @@ public class ContaDTO implements Serializable {
 
 	private Double saldo;
 
-	private Double limiteValor = 5.000;
+	private Double limiteValor;
 
 	private LocalDateTime dataCriacao;
 }

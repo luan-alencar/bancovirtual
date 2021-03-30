@@ -51,7 +51,7 @@ public class Conta implements Serializable {
 	private Double saldo;
 
 	@Column(name = "LIMITE_VALOR")
-	private Double limiteValor = 5.000;
+	private Double limiteValor;
 
 	@Temporal(TemporalType.TIMESTAMP)
 	@Column(name = "DATA_CRIACAO")
