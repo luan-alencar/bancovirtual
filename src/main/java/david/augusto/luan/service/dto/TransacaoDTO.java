@@ -12,7 +12,7 @@ public class TransacaoDTO implements Serializable {
 
 	private Long id;
 
-	private Integer conta;
+	private Long conta;
 
 	private Double valor;
 

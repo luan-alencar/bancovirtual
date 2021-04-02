@@ -23,13 +23,13 @@ public interface UsuarioRepository extends JpaRepository<Usuario, Long> {
 			Pageable peageble);
 
 	@Modifying
-	@Query("UPDATE CONTA C SET C.SALDO = C.SALDO + ?1 WHERE C.ID = ?2")
+	@Query("UPDATE TB_CONTA C SET C.SALDO = C.SALDO + ?1 WHERE C.ID = ?2")
 	void setFixedSaldoFor(Double quantidade, Long id);
 
 	Conta findByIdConta(Long id);
 
 	@Modifying
-	@Query("UPDATE CONTA C SET C.SALDO = C.SALDO + ?1 WHERE C.ID = ?2")
+	@Query("UPDATE TB_CONTA C SET C.SALDO = C.SALDO + ?1 WHERE C.ID = ?2")
 	void setFixedSaldo(Double quantidade, Long id);
 
 }

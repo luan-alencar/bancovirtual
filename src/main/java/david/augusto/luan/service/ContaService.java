@@ -28,10 +28,10 @@ public class ContaService {
 		return repository.findByIdAndStatus(filtro, CollectionUtils.isEmpty(filtro.getIds()), peageble);
 	}
 
-	public Conta salvar(ContaDTO contaDTO) {
+	public ContaDTO salvar(ContaDTO contaDTO) {
 		contaDTO.setSituacao(TipoContaEnum.A);
 		Conta conta = mapper.toEntity(contaDTO);
-		return repository.save(conta);
+		return mapper.toDto(repository.save(conta));
 	}
 
 }

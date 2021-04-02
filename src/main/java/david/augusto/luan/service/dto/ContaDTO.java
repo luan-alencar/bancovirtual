@@ -1,14 +1,15 @@
 package david.augusto.luan.service.dto;
 
+import david.augusto.luan.domain.Transacao;
+import david.augusto.luan.domain.Usuario;
+import david.augusto.luan.service.enumeration.TipoContaEnum;
+import lombok.Getter;
+import lombok.Setter;
+
 import java.io.Serializable;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
-
-import david.augusto.luan.domain.Transacao;
-import david.augusto.luan.service.enumeration.TipoContaEnum;
-import lombok.Getter;
-import lombok.Setter;
 
 @Getter
 @Setter
@@ -16,7 +17,7 @@ public class ContaDTO implements Serializable {
 
 	private Long id;
 
-	private Long usuario;
+	private Usuario usuario;
 
 	private TipoContaEnum situacao;
 

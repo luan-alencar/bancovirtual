@@ -5,20 +5,7 @@ import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.EnumType;
-import javax.persistence.Enumerated;
-import javax.persistence.FetchType;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
-import javax.persistence.SequenceGenerator;
-import javax.persistence.Table;
-import javax.persistence.Temporal;
-import javax.persistence.TemporalType;
+import javax.persistence.*;
 
 import david.augusto.luan.service.enumeration.TipoContaEnum;
 import lombok.Getter;
@@ -37,7 +24,7 @@ public class Conta implements Serializable {
 	@SequenceGenerator(sequenceName = "SQ_CONTA", name = "SQ_CONTA", allocationSize = 1)
 	private Long id;
 
-	@ManyToOne(fetch = FetchType.EAGER)
+	@ManyToOne(fetch = FetchType.LAZY)
 	private Usuario usuario;
 
 	@Enumerated(EnumType.STRING)
@@ -47,13 +34,12 @@ public class Conta implements Serializable {
 	@OneToMany(mappedBy = "conta")
 	private List<Transacao> transacoes = new ArrayList<Transacao>();
 
-	@Column(nullable = false)
+	@Column(name = "SALDO", nullable = false)
 	private Double saldo;
 
 	@Column(name = "LIMITE_VALOR")
 	private Double limiteValor;
 
-	@Temporal(TemporalType.TIMESTAMP)
 	@Column(name = "DATA_CRIACAO")
 	private LocalDateTime dataCriacao;
 }
