@@ -29,7 +29,6 @@ public class ContaService {
 	}
 
 	public ContaDTO salvar(ContaDTO contaDTO) {
-		contaDTO.setSituacao(TipoContaEnum.A);
 		Conta conta = mapper.toEntity(contaDTO);
 		return mapper.toDto(repository.save(conta));
 	}

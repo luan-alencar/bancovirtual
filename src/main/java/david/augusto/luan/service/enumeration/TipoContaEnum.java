@@ -7,7 +7,7 @@ import lombok.Getter;
 @Getter
 public enum TipoContaEnum {
 
-	A("Corrente"), I("Poupança");
+	C("Corrente"), P("Poupança");
 
 	private String value;
 
