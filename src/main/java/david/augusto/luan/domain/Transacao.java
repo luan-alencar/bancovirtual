@@ -5,13 +5,16 @@ import java.time.LocalDateTime;
 
 import javax.persistence.*;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 @Entity
 @Table(name = "TB_TRANSACAO")
 @Getter
 @Setter
+@NoArgsConstructor
 public class Transacao implements Serializable {
 
 	/*

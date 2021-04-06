@@ -1,20 +1,21 @@
 package david.augusto.luan.domain;
 
+import david.augusto.luan.service.enumeration.TipoContaEnum;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
+import javax.persistence.*;
 import java.io.Serializable;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
-import javax.persistence.*;
-
-import david.augusto.luan.service.enumeration.TipoContaEnum;
-import lombok.Getter;
-import lombok.Setter;
-
 @Entity
 @Table(name = "TB_CONTA")
 @Getter
 @Setter
+@NoArgsConstructor
 public class Conta implements Serializable {
 
 	private static final long serialVersionUID = 4881839220023654399L;

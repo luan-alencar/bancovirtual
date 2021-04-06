@@ -19,7 +19,7 @@ public class ContaDTO implements Serializable {
 
 	private Usuario usuario;
 
-	private TipoContaEnum situacao;
+	private String situacao;
 
 	private List<Transacao> transacoes = new ArrayList<Transacao>();
 

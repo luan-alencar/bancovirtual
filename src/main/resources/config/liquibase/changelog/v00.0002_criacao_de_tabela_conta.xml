@@ -1,0 +1,36 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd">
+
+    <changeSet id="1" author="luan.augusto">
+
+        <createTable tableName="TB_CONTA">
+
+            <column name="ID" type="NUMBER">
+                <constraints nullable="false"/>
+            </column>
+
+            <column name="USUARIO" type="BIGINT"/>
+
+            <column name="ST_CONTA" type="VARCHAR(255)"/>
+
+            <column name="TRANSACOES" type="BIGINT">
+                <constraints nullable="true"/>
+            </column>
+
+            <column name="SALDO" type="DECIMAL(9,1)"/>
+
+            <column name="LIMITE_VALOR" type="DECIMAL(9,1)">
+                <constraints nullable="false" unique="true"/>
+            </column>
+
+            <column name="DATA_CRIACAO" type="TIMESTAMP"/>
+
+        </createTable>
+
+        <addPrimaryKey tableName="TB_CONTA" columnNames="ID" constraintName="PK_USUARIO"/>
+        <createSequence sequenceName="SQ_CONTA" cycle="false" cacheSize="20" incrementBy="1" startValue="1"/>
+
+    </changeSet>
+</databaseChangeLog>

@@ -1,0 +1,38 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd">
+
+    <changeSet id="1" author="luan.augusto">
+
+        <createTable tableName="TB_USUARIO">
+
+            <column name="ID" type="BIGINT">
+                <constraints nullable="false"/>
+            </column>
+
+            <column name="CPF" type="VARCHAR(11)"/>
+
+            <column name="NOME" type="VARCHAR(255)"/>
+
+            <column name="TELEFONE" type="VARCHAR(15)"/>
+
+            <column name="SEGUNDO_TELEFONE" type="VARCHAR(15)">
+                <constraints nullable="true"/>
+            </column>
+
+            <column name="EMAIL" type="VARCHAR(255)"/>
+
+            <column name="DATA_NASCIMENTO" type="TIMESTAMP">
+                <constraints nullable="false" unique="true"/>
+            </column>
+
+            <column name="DATA_CADASTRO" type="TIMESTAMP"/>
+
+        </createTable>
+
+        <addPrimaryKey tableName="TB_USUARIO" columnNames="ID" constraintName="PK_USUARIO"/>
+        <createSequence sequenceName="SQ_USUARIO" cycle="false" cacheSize="20" incrementBy="1" startValue="1"/>
+
+    </changeSet>
+</databaseChangeLog>

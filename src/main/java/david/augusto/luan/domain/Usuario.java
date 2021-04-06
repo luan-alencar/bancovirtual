@@ -1,6 +1,8 @@
 package david.augusto.luan.domain;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 import org.hibernate.validator.constraints.Length;
 
@@ -14,6 +16,7 @@ import java.util.List;
 @Table(name = "TB_USUARIO")
 @Getter
 @Setter
+@NoArgsConstructor
 public class Usuario implements Serializable {
 
     private static final long serialVersionUID = -2448993761122309131L;
