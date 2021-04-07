@@ -28,7 +28,7 @@ public class ContaService {
 
 	public ContaDTO salvar(ContaDTO contaDTO) {
 		Conta conta = mapper.toEntity(contaDTO);
-		return mapper.toDto(repository.save(conta));
+		return mapper.toDTO(repository.save(conta));
 	}
 
 }

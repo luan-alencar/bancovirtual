@@ -29,7 +29,7 @@ public class UsuarioService {
 
 	@Transactional(readOnly = true)
 	public List<UsuarioDTO> listarUsuarios(UsuarioDTO usuarioDTO) {
-		return mapper.toDto(repository.findAll());
+		return mapper.listagemDTO(repository.findAll());
 	}
 
 }

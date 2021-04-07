@@ -25,7 +25,7 @@ public class TransacaoResource {
     public ResponseEntity<TransacaoDTO> depositar(@RequestBody TransacaoDTO transacaoDTO) {
         Transacao transacao = mapper.toEntity(transacaoDTO);
         service.salvar(transacaoDTO);
-        return ResponseEntity.ok(mapper.toDto(transacao));
+        return ResponseEntity.ok(mapper.toDTO(transacao));
     }
 
     @PatchMapping("/{id}/deletar")
@@ -38,7 +38,7 @@ public class TransacaoResource {
     @GetMapping
     @Timed
     public ResponseEntity<?> listar() {
-        List<Transacao> transacoes = mapper.toEntity(service.listar());
+        List<Transacao> transacoes = mapper.listagemEntity(service.listar());
         return new ResponseEntity<>(transacoes, HttpStatus.OK);
     }
 

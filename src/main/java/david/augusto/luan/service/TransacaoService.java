@@ -24,11 +24,11 @@ public class TransacaoService {
         Transacao transacao = mapper.toEntity(transacaoDTO);
         transacao.setDataTransacao(LocalDateTime.now());
         repository.save(transacao);
-        return mapper.toDto(transacao);
+        return mapper.toDTO(transacao);
     }
 
     public List<TransacaoDTO> listar() {
-        return mapper.toDto(repository.findAll());
+        return mapper.listagemDTO(repository.findAll());
     }
 
     public void delete(Long id) {
@@ -41,6 +41,6 @@ public class TransacaoService {
 
     public List<TransacaoDTO> buscarContas(ContaDTO contaDTO) {
         List<Transacao> listaTransacao = repository.findByConta(contaDTO);
-        return mapper.toDto(listaTransacao);
+        return mapper.listagemDTO(listaTransacao);
     }
 }
