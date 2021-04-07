@@ -15,7 +15,7 @@ public interface ContaMapper  {
 
     ContaDTO toDTO(Conta conta);
 
-    List<Usuario> listagemEntity(List<UsuarioDTO> usuariosDTO);
+    List<Usuario> listagemEntity(List<UsuarioDTO> usuarioDTOList);
 
     List<UsuarioDTO> listagemDTO(List<Usuario> usuarios);
 }
