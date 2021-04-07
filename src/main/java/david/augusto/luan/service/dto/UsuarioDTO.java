@@ -37,6 +37,6 @@ public class UsuarioDTO implements Serializable {
 
 	private LocalDateTime dataCadastro;
 
-	private List<Conta> contas = new ArrayList<>();
+	private List<ContaDTO> contas = new ArrayList<>();
 
 }

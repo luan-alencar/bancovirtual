@@ -1,7 +1,5 @@
 package david.augusto.luan.service.dto;
 
-import david.augusto.luan.domain.Transacao;
-import david.augusto.luan.domain.Usuario;
 import david.augusto.luan.service.enumeration.TipoContaEnum;
 import lombok.Getter;
 import lombok.Setter;
@@ -17,11 +15,11 @@ public class ContaDTO implements Serializable {
 
 	private Long id;
 
-	private Usuario usuario;
+	private UsuarioDTO usuario;
 
-	private String situacao;
+	private TipoContaEnum situacao;
 
-	private List<Transacao> transacoes = new ArrayList<Transacao>();
+	private List<TransacaoDTO> transacoes = new ArrayList<>();
 
 	private Double saldo;
 

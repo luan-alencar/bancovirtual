@@ -1,20 +1,20 @@
 package david.augusto.luan.domain;
 
-import java.io.Serializable;
-import java.time.LocalDateTime;
-
-import javax.persistence.*;
-
-import com.fasterxml.jackson.annotation.JsonIgnore;
+import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+
+import javax.persistence.*;
+import java.io.Serializable;
+import java.time.LocalDateTime;
 
 @Entity
 @Table(name = "TB_TRANSACAO")
 @Getter
 @Setter
 @NoArgsConstructor
+@AllArgsConstructor
 public class Transacao implements Serializable {
 
 	/*
@@ -29,6 +29,7 @@ public class Transacao implements Serializable {
 	private Long id;
 
 	@ManyToOne
+	@JoinColumn(name = "conta")
 	private Conta conta;
 
 	@Column(name = "VALOR")
