@@ -11,11 +11,11 @@ import java.util.List;
 @Mapper(componentModel = "spring", uses = {UsuarioMapper.class, TransacaoMapper.class})
 public interface ContaMapper  {
 
-    Conta toEntity(ContaDTO contaDTO);
-
     ContaDTO toDTO(Conta conta);
 
-    List<Usuario> listagemEntity(List<UsuarioDTO> usuarioDTOList);
+    Conta toEntity(ContaDTO contaDTO);
 
     List<UsuarioDTO> listagemDTO(List<Usuario> usuarios);
+
+    List<Usuario> listagemEntity(List<UsuarioDTO> usuarioDTOList);
 }

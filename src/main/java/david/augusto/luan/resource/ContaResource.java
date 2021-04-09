@@ -26,10 +26,6 @@ public class ContaResource {
 
 	private final ContaService service;
 
-//	private final ContaMapper mapper;
-//
-//	private final ContaRepository repository;
-
 	@PostMapping
 	@Timed
 	public ResponseEntity<ContaDTO> createConta(@Valid @RequestBody ContaDTO contaDTO) {

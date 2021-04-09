@@ -13,8 +13,6 @@ import java.time.LocalDateTime;
 @Table(name = "TB_TRANSACAO")
 @Getter
 @Setter
-@NoArgsConstructor
-@AllArgsConstructor
 public class Transacao implements Serializable {
 
 	/*
